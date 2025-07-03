@@ -1,3 +1,10 @@
+---
+layout: default
+title: 算法编程
+permalink: /notes/R语言算法编程学习计划.html
+---
+
+
 
 # R语言算法编程半年系统学习计划（原始确认版）
 
