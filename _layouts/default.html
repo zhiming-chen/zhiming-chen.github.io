@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  {% include header.html %}
+
+  <div class="container">
+    {% include sidebar.html %}
+    <main class="content">
+      {{ content }}
+    </main>
+  </div>
+</body>
+</html>
