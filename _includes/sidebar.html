@@ -1,18 +1,42 @@
-<aside class="sidebar">
-  {% if page.url contains '/projects/' %}
-  <ul>
-    <li><a href="/projects/A-project.html">A项目</a></li>
-    <li><a href="/projects/B-project.html">B项目</a></li>
-  </ul>
-  {% elsif page.url contains '/notes/' %}
-  <ul>
-    <li><a href="/notes/note1.html">笔记1</a></li>
-  </ul>
+<!-- _includes/sidebar.html -->
+
+<nav class="sidebar-nav">
+
+  {% if page.url contains '/notes/' %}
+    <h3>学习笔记</h3>
+    <ul>
+      {% assign note_pages = site.pages | where_exp:"item", "item.url contains '/notes/' and item.url != '/notes/index.html'" | sort:"title" %}
+      {% for p in note_pages %}
+        <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+  {% elsif page.url contains '/projects/' %}
+    <h3>项目材料</h3>
+    <ul>
+      {% assign project_pages = site.pages | where_exp:"item", "item.url contains '/projects/' and item.url != '/projects/index.html'" | sort:"title" %}
+      {% for p in project_pages %}
+        <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+      {% endfor %}
+    </ul>
+
   {% elsif page.url contains '/essays/' %}
-  <ul>
-    <li><a href="/essays/essay1.html">随笔1</a></li>
-  </ul>
+    <h3>日常随笔</h3>
+    <ul>
+      {% assign essay_pages = site.pages | where_exp:"item", "item.url contains '/essays/' and item.url != '/essays/index.html'" | sort:"title" %}
+      {% for p in essay_pages %}
+        <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+      {% endfor %}
+    </ul>
+
   {% else %}
-  <!-- 首页或个人简介无侧边栏 -->
+    <h3>导航</h3>
+    <ul>
+      <li><a href="/about.html">个人简介</a></li>
+      <li><a href="/projects/">项目材料</a></li>
+      <li><a href="/notes/">学习笔记</a></li>
+      <li><a href="/essays/">日常随笔</a></li>
+    </ul>
   {% endif %}
-</aside>
+
+</nav>
