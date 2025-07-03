@@ -1,0 +1,9 @@
+<header>
+  <nav class="top-nav">
+    <ul>
+      {% for link in site.nav_links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
