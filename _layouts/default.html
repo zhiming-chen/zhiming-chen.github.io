@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    <nav>
+      <ul>
+        <li><a href="/about.html">关于我</a></li>
+        <li><a href="/notes/">学习笔记</a></li>
+        <li><a href="/projects/">项目材料</a></li>
+        <li><a href="/essays/">日常随笔</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div style="display: flex;">
+    <aside style="width: 200px; padding: 10px; border-right: 1px solid #ccc;">
+      {% include sidebar.html %}
+    </aside>
+    <main style="flex: 1; padding: 10px;">
+      {{ content }}
+    </main>
+  </div>
+</body>
+</html>
