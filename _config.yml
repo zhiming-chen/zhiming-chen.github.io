@@ -1,13 +1,8 @@
 title: 陈志明的个人网站
-baseurl: "" 
+description: 自动文章导航演示站点
+markdown: kramdown
+theme: minima
+baseurl: ""
 url: "https://zhiming-chen.github.io"
-
-nav_links:
-  - title: 个人简介
-    url: /about.html
-  - title: 项目材料
-    url: /projects/
-  - title: 学习笔记
-    url: /notes/
-  - title: 日常随笔
-    url: /essays/
+plugins:
+  - jekyll-feed
