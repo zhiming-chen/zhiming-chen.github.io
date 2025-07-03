@@ -1,0 +1,16 @@
+title: "陈志明的个人网站"
+description: "记录 • 学习 • 分享"
+theme: jekyll-theme-slate
+show_downloads: false
+
+navigation:
+  - title: 首页
+    url: index.md
+  - title: 简历
+    url: resume.md
+  - title: 学习笔记
+    url: notes.md
+  - title: 项目展示
+    url: projects.md
+  - title: 个人随笔
+    url: essays.md
