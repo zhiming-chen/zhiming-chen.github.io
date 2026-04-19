@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on 陈志明的博客</title>
+    <link>https://zhiming-chen.github.io/tags/</link>
+    <description>Recent content in Tags on 陈志明的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zhiming-chen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IQualityR</title>
+      <link>https://zhiming-chen.github.io/tags/iqualityr/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/iqualityr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quality Tools</title>
+      <link>https://zhiming-chen.github.io/tags/quality-tools/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/quality-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>数据科学</title>
+      <link>https://zhiming-chen.github.io/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>数据结构</title>
+      <link>https://zhiming-chen.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>算法</title>
+      <link>https://zhiming-chen.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Visualization</title>
+      <link>https://zhiming-chen.github.io/tags/data-visualization/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/data-visualization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quality Management</title>
+      <link>https://zhiming-chen.github.io/tags/quality-management/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/quality-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>R-Package</title>
+      <link>https://zhiming-chen.github.io/tags/r-package/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/r-package/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SPC</title>
+      <link>https://zhiming-chen.github.io/tags/spc/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/spc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>管理</title>
+      <link>https://zhiming-chen.github.io/tags/%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>质量管理</title>
+      <link>https://zhiming-chen.github.io/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>没苦硬吃</title>
+      <link>https://zhiming-chen.github.io/tags/%E6%B2%A1%E8%8B%A6%E7%A1%AC%E5%90%83/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/%E6%B2%A1%E8%8B%A6%E7%A1%AC%E5%90%83/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>质量管理发展史</title>
+      <link>https://zhiming-chen.github.io/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E5%8F%91%E5%B1%95%E5%8F%B2/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/tags/%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E5%8F%91%E5%B1%95%E5%8F%B2/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Quality Tools on 陈志明的博客</title>
+    <link>https://zhiming-chen.github.io/tags/quality-tools/</link>
+    <description>Recent content in Quality Tools on 陈志明的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zhiming-chen.github.io/tags/quality-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>乌龟图（Turtle Diagram）在质量管理中的应用与R实现</title>
+      <link>https://zhiming-chen.github.io/turtle_diagram/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/turtle_diagram/</guid>
+      <description>iQualityR R包实用函数功能介绍：乌龟图及其绘制函数</description>
+    </item>
+  </channel>
+</rss>

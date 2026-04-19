@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on 陈志明的博客</title>
+    <link>https://zhiming-chen.github.io/categories/</link>
+    <description>Recent content in Categories on 陈志明的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zhiming-chen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quality</title>
+      <link>https://zhiming-chen.github.io/categories/quality/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/categories/quality/</guid>
+      <description>道。管理，重点是质量管理的一些想法和见解。</description>
+    </item>
+    <item>
+      <title>R</title>
+      <link>https://zhiming-chen.github.io/categories/r/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/categories/r/</guid>
+      <description>术。R语言以及其应用，非项目类的文章汇集。</description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://zhiming-chen.github.io/categories/tools/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/categories/tools/</guid>
+      <description>具。算法,编程,命令行,软件包。</description>
+    </item>
+    <item>
+      <title>Project</title>
+      <link>https://zhiming-chen.github.io/categories/project/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/categories/project/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Others</title>
+      <link>https://zhiming-chen.github.io/categories/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/categories/others/</guid>
+      <description>杂。随笔,速记,心得,感悟,或者是一段梦境记录。</description>
+    </item>
+  </channel>
+</rss>

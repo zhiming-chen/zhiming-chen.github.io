@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>陈志明的博客</title>
+    <link>https://zhiming-chen.github.io/</link>
+    <description>Recent content on 陈志明的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zhiming-chen.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>乌龟图（Turtle Diagram）在质量管理中的应用与R实现</title>
+      <link>https://zhiming-chen.github.io/turtle_diagram/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/turtle_diagram/</guid>
+      <description>iQualityR R包实用函数功能介绍：乌龟图及其绘制函数</description>
+    </item>
+    <item>
+      <title>R语言_数据结构与算法：1.概述</title>
+      <link>https://zhiming-chen.github.io/r%E8%AF%AD%E8%A8%80_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951.%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/r%E8%AF%AD%E8%A8%80_%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951.%E6%A6%82%E8%BF%B0/</guid>
+      <description>数据结构与算法:基于R语言 一书策划实现过程的系列文字和案例记录</description>
+    </item>
+    <item>
+      <title>iQualityR: 工业级统计质量管理引擎</title>
+      <link>https://zhiming-chen.github.io/projects/chinacolor/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/projects/chinacolor/</guid>
+      <description>为 R 语言注入中国传统色美学，构建严谨且优雅的 SPC 与质量分析工作流。</description>
+    </item>
+    <item>
+      <title>iQualityR: 工业级统计质量管理引擎</title>
+      <link>https://zhiming-chen.github.io/projects/iqualityr/</link>
+      <pubDate>Sat, 11 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/projects/iqualityr/</guid>
+      <description>为 R 语言注入中国传统色美学，构建严谨且优雅的 SPC 与质量分析工作流。</description>
+    </item>
+    <item>
+      <title>生存与发展：质量管理的道与术</title>
+      <link>https://zhiming-chen.github.io/quality_management/2020-12-28_%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E9%81%93%E4%B8%8E%E6%9C%AF/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/quality_management/2020-12-28_%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E9%81%93%E4%B8%8E%E6%9C%AF/</guid>
+      <description>这是2020年12月底，在知乎上回答一个关于从技术转岗质量岗位的小文章，记录的是当时的想法。现在看来，对中小企业部门负责人依然有参考意义。</description>
+    </item>
+    <item>
+      <title>站在月球看地球：浅谈质量权利</title>
+      <link>https://zhiming-chen.github.io/quality_management/2020-12-28_%E7%AB%99%E5%9C%A8%E6%9C%88%E7%90%83%E7%9C%8B%E5%9C%B0%E7%90%83%E6%B5%85%E8%81%8A%E8%B4%A8%E9%87%8F%E6%9D%83%E5%88%A9/</link>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/quality_management/2020-12-28_%E7%AB%99%E5%9C%A8%E6%9C%88%E7%90%83%E7%9C%8B%E5%9C%B0%E7%90%83%E6%B5%85%E8%81%8A%E8%B4%A8%E9%87%8F%E6%9D%83%E5%88%A9/</guid>
+      <description>这是2020年12月底，在知乎上回答一个关于质量部门权利的小文章，记录的是当时的想法。现在看来，对中小企业部门负责人依然有参考意义。</description>
+    </item>
+    <item>
+      <title>质量管理三百年：一部人类在效率、暴烈与人性之间反复横跳的悲壮史诗</title>
+      <link>https://zhiming-chen.github.io/quality_management/2026-03-26_%E8%B4%A8%E9%87%8F%E5%8F%91%E5%B1%95%E6%B2%BF%E8%A2%AD%E4%B8%8E%E6%80%9D%E8%80%83/</link>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/quality_management/2026-03-26_%E8%B4%A8%E9%87%8F%E5%8F%91%E5%B1%95%E6%B2%BF%E8%A2%AD%E4%B8%8E%E6%80%9D%E8%80%83/</guid>
+      <description>本文精炼横跨三百年、贯穿农业、工业与智能时代的质量管理发展历程，认为质量从来不是温柔的技术改良，而是人类在战争、危机与技术暴政中被迫选择的血色权衡——未来的质量不在消除不确定性，而在于建立韧性与守护人性。</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zhiming-chen.github.io/r%E8%AF%AD%E8%A8%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951.%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zhiming-chen.github.io/r%E8%AF%AD%E8%A8%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%951.%E6%A6%82%E8%BF%B0/</guid>
+      <description>&lt;div id=&#34;临界点当能运行的代码失效时&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;1.1 临界点：当“能运行”的代码失效时&lt;/h2&gt;
+&lt;p&gt;在数据科学职业生涯的初期，多数人对“算法”的感知是模糊的。得益于 R 语言极其丰富的生态系统，我们习惯于直接调用 &lt;code&gt;lm()&lt;/code&gt; 进行回归，使用 &lt;code&gt;dplyr::left_join()&lt;/code&gt; 合并表，或者用 &lt;code&gt;randomForest()&lt;/code&gt; 构建预测模型。在小规模数据集（如几万行数据）下，这些操作几乎是瞬间完成的。此时，代码仅仅是实现业务逻辑的工具，而“算法”似乎只是隐藏在包（Package）背后的黑盒。&lt;/p&gt;
+&lt;p&gt;然而，数据科学的工作中存在一个隐蔽的&lt;strong&gt;“性能断层”&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;当你的业务规模从实验室阶段跨越到工业生产阶段，数据量从 &lt;span class=&#34;math inline&#34;&gt;\(10^4\)&lt;/span&gt; 增长到 &lt;span class=&#34;math inline&#34;&gt;\(10^7\)&lt;/span&gt; 时，原本平滑的计算过程会突然坍塌。你可能会发现，一个简单的嵌套循环开始让 RStudio 陷入无尽的旋转光标；原本几秒钟完成的数据清洗，在处理千万级传感器日志时，跑了一个小时依然没有结果。此时，增加内存或升级 CPU 往往收效甚微。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;真正的问题在于：你的代码仍然是“能运行的代码”，但它已经不再是“可扩展的计算方法”。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这就是为什么本书坚持将“算法修养”作为数据科学家的核心竞争力。算法思维的本质，不仅是追求代码的“优雅”，更是为了确保当问题规模扩大时，你的解决方案依然具备&lt;strong&gt;生命力&lt;/strong&gt;。一个在一万条数据上运行良好的方法，如果其复杂度是 &lt;span class=&#34;math inline&#34;&gt;\(O(n^2)\)&lt;/span&gt;，那么在面对一亿条数据时，它在物理时间上就是“不可行的”。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;算法的哲学定义从食谱到逻辑契约&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;1.2 算法的哲学定义：从食谱到逻辑契约&lt;/h2&gt;
+&lt;p&gt;什么是算法？在计算机科学的严谨定义中，&lt;strong&gt;算法（Algorithm）是一系列定义明确、有限且有序的指令，用于解决特定问题或执行特定任务。&lt;/strong&gt; 为了透彻理解这个概念，我们需要将其拆解为五个核心属性，并结合 R 语言的开发实践进行深度分析：&lt;/p&gt;
+&lt;div id=&#34;明确性definiteness&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1.2.1 明确性（Definiteness）&lt;/h3&gt;
+&lt;p&gt;算法的每一步必须清晰无误。在 R 开发中，这要求我们摆脱对“副作用”和“全局环境”的依赖。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;低级实践：&lt;/strong&gt; 编写一个依赖全局变量 &lt;code&gt;df_temp&lt;/code&gt; 的处理函数。一旦全局环境变化，算法行为就会变得不可预测。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;算法思维：&lt;/strong&gt; 函数应当是“纯粹”的。输入确定的参数，执行确定的逻辑，产出确定的结果。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;输入与输出input-output&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1.2.2 输入与输出（Input &amp;amp; Output）&lt;/h3&gt;
+&lt;p&gt;算法是连接已知与未知的桥梁。在 R 中，输入可以是原子向量、复杂的 List 结构，甚至是外部数据库连接；而输出则必须是逻辑运算后的必然产物。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;有限性finiteness&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1.2.3 有限性（Finiteness）&lt;/h3&gt;
+&lt;p&gt;这是算法区别于盲目尝试的关键。算法必须在有限的步骤内终止。在处理递归算法（如后续章节要讲的树遍历）时，如果没有正确的终止条件（Base Case），R 的调用栈会迅速溢出（Stack Overflow）。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;有效性effectiveness&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;1.2.4 有效性（Effectiveness）&lt;/h3&gt;
+&lt;p&gt;算法的每一步必须是足够基础、可执行的。这意味着即使脱离了高性能服务器，只用纸笔，你原则上也能推演出算法的每一步状态。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;深度案例拆解查找算法的性能阶梯&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;1.3 深度案例拆解：查找算法的性能阶梯&lt;/h2&gt;
+&lt;p&gt;为了直观感受算法思维带来的“降维打击”，我们来看一个附件中提到的最经典问题：&lt;strong&gt;在向量中判断某个特定值是否存在。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>iQualityR: 工业级统计质量管理引擎 | 陈志明的博客</title>
+<meta name="keywords" content="SPC, Quality Management, R-Package, Data Visualization">
+<meta name="description" content="为 R 语言注入中国传统色美学，构建严谨且优雅的 SPC 与质量分析工作流。">
+<meta name="author" content="">
+<link rel="canonical" href="https://zhiming-chen.github.io/projects/chinacolor/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d7ce877b2b7ff76550affaa15322c76495dd837a48043f28577c9cd6d1fc3165.css" integrity="sha256-186Heyt/92VQr/qhUyLHZJXdg3pIBD8oV3yc1tH8MWU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://zhiming-chen.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zhiming-chen.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zhiming-chen.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://zhiming-chen.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://zhiming-chen.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://zhiming-chen.github.io/projects/chinacolor/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><style>
+ 
+.post-meta {
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    color: #b0b0b0 !important;  
+    margin-top: 6px !important;
+    margin-bottom: 22px !important;  
+    display: block;
+    letter-spacing: 0.3px;
+}
+
+ 
+.entry-header h2 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: #2c2c2e !important;
+    transition: all 0.2s ease-in-out;  
+}
+
+ 
+.post-entry:hover .entry-header h2 {
+    color: #007aff !important;            
+    text-decoration: underline !important;  
+    text-decoration-color: rgba(0, 122, 255, 0.3) !important;  
+    text-underline-offset: 8px;           
+    transform: translateX(3px);           
+}
+
+ 
+.post-entry {
+    margin-bottom: 45px !important;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #f2f2f2;  
+}
+</style>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    }
+  };
+</script><meta property="og:url" content="https://zhiming-chen.github.io/projects/chinacolor/">
+  <meta property="og:site_name" content="陈志明的博客">
+  <meta property="og:title" content="iQualityR: 工业级统计质量管理引擎">
+  <meta property="og:description" content="为 R 语言注入中国传统色美学，构建严谨且优雅的 SPC 与质量分析工作流。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2026-04-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-11T00:00:00+00:00">
+    <meta property="article:tag" content="SPC">
+    <meta property="article:tag" content="Quality Management">
+    <meta property="article:tag" content="R-Package">
+    <meta property="article:tag" content="Data Visualization">
+    <meta property="og:image" content="https://zhiming-chen.github.io/projects/chinacolor/project/iQualityR/images/hero-grid.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhiming-chen.github.io/projects/chinacolor/project/iQualityR/images/hero-grid.png">
+  <meta name="twitter:title" content="iQualityR: 工业级统计质量管理引擎">
+  <meta name="twitter:description" content="为 R 语言注入中国传统色美学，构建严谨且优雅的 SPC 与质量分析工作流。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://zhiming-chen.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "iQualityR: 工业级统计质量管理引擎",
+      "item": "https://zhiming-chen.github.io/projects/chinacolor/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "iQualityR: 工业级统计质量管理引擎",
+  "name": "iQualityR: 工业级统计质量管理引擎",
+  "description": "为 R 语言注入中国传统色美学，构建严谨且优雅的 SPC 与质量分析工作流。",
+  "keywords": [
+    "SPC", "Quality Management", "R-Package", "Data Visualization"
+  ],
+  "articleBody": "🚀 项目愿景 iQualityR 不仅仅是一个计算 $d_2, c_4$ 等统计常数的工具包，它致力于解决工程实践中“数据图表枯燥、信息密度低、审美缺失”的痛点。通过内置中国传统色调色盘与高度封装的 ggplot2 模板，让每一份质量报告都具备科研级的严谨与艺术级的视觉。\n✨ 核心特性 Sigma Engine v2: 支持超过 14 种概率分布的过程能力分析 ($C_p, C_{pk}, P_p, P_{pk}$)。 Aesthetic Presets: 内置「青雀头黛」、「朱漆描金」等 12 套工业美学主题。 Ready-to-Publish: 一键生成符合 Minitab 技术标准且可直接用于学术发表的高清图表。 Seamless Integration: 完美兼容 Tidyverse 生态，支持管道符 |\u003e 操作。 🖼️ 视觉阵法 (九宫格展示) 此处你可以利用 Markdown 语法排列 8 张缩略图，中心放置项目 Logo，形成你设想的视觉合力。\n[ iQualityR ] 📦 快速开始 # 安装开发版本 # install.packages(\"devtools\") devtools::install_github(\"chenzhiming/iQualityR\") library(iQualityR) # 开启“矿影探索”科研主题 set_iq_theme(\"mineral\") # 执行单值控制图分析 spc_chart(data, type = \"I-MR\") 📖 文档导航 安装指南 SPC 模块详解 中国传统色调色盘使用手册 ",
+  "wordCount" : "72",
+  "inLanguage": "en",
+  "image":"https://zhiming-chen.github.io/projects/chinacolor/project/iQualityR/images/hero-grid.png","datePublished": "2026-04-11T00:00:00Z",
+  "dateModified": "2026-04-11T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zhiming-chen.github.io/projects/chinacolor/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "陈志明的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zhiming-chen.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://zhiming-chen.github.io/" accesskey="h" title="陈志明的博客 (Alt + H)">陈志明的博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://zhiming-chen.github.io/categories/r/" title="R">
+                    <span>R</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zhiming-chen.github.io/categories/quality/" title="Quality">
+                    <span>Quality</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zhiming-chen.github.io/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zhiming-chen.github.io/categories/tools/" title="Tools">
+                    <span>Tools</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zhiming-chen.github.io/categories/others/" title="Others">
+                    <span>Others</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      iQualityR: 工业级统计质量管理引擎
+    </h1>
+    <div class="post-description">
+      为 R 语言注入中国传统色美学，构建严谨且优雅的 SPC 与质量分析工作流。
+    </div>
+  </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://zhiming-chen.github.io/project/iQualityR/images/hero-grid.png" alt="iQualityR Visual Grid">
+        <figcaption>iQualityR: 严谨统计与东方美学的交汇</figcaption>
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#-%e9%a1%b9%e7%9b%ae%e6%84%bf%e6%99%af" aria-label="🚀 项目愿景">🚀 项目愿景</a></li>
+                <li>
+                    <a href="#-%e6%a0%b8%e5%bf%83%e7%89%b9%e6%80%a7" aria-label="✨ 核心特性">✨ 核心特性</a></li>
+                <li>
+                    <a href="#-%e8%a7%86%e8%a7%89%e9%98%b5%e6%b3%95-%e4%b9%9d%e5%ae%ab%e6%a0%bc%e5%b1%95%e7%a4%ba" aria-label="🖼️ 视觉阵法 (九宫格展示)">🖼️ 视觉阵法 (九宫格展示)</a></li>
+                <li>
+                    <a href="#-%e5%bf%ab%e9%80%9f%e5%bc%80%e5%a7%8b" aria-label="📦 快速开始">📦 快速开始</a></li>
+                <li>
+                    <a href="#-%e6%96%87%e6%a1%a3%e5%af%bc%e8%88%aa" aria-label="📖 文档导航">📖 文档导航</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="-项目愿景">🚀 项目愿景<a hidden class="anchor" aria-hidden="true" href="#-项目愿景">#</a></h2>
+<p><code>iQualityR</code> 不仅仅是一个计算 $d_2, c_4$ 等统计常数的工具包，它致力于解决工程实践中“数据图表枯燥、信息密度低、审美缺失”的痛点。通过内置中国传统色调色盘与高度封装的 <code>ggplot2</code> 模板，让每一份质量报告都具备<strong>科研级的严谨</strong>与<strong>艺术级的视觉</strong>。</p>
+<hr>
+<h2 id="-核心特性">✨ 核心特性<a hidden class="anchor" aria-hidden="true" href="#-核心特性">#</a></h2>
+<ul>
+<li><strong>Sigma Engine v2</strong>: 支持超过 14 种概率分布的过程能力分析 ($C_p, C_{pk}, P_p, P_{pk}$)。</li>
+<li><strong>Aesthetic Presets</strong>: 内置「青雀头黛」、「朱漆描金」等 12 套工业美学主题。</li>
+<li><strong>Ready-to-Publish</strong>: 一键生成符合 Minitab 技术标准且可直接用于学术发表的高清图表。</li>
+<li><strong>Seamless Integration</strong>: 完美兼容 <code>Tidyverse</code> 生态，支持管道符 <code>|&gt;</code> 操作。</li>
+</ul>
+<hr>
+<h2 id="-视觉阵法-九宫格展示">🖼️ 视觉阵法 (九宫格展示)<a hidden class="anchor" aria-hidden="true" href="#-视觉阵法-九宫格展示">#</a></h2>
+<blockquote>
+<p><em>此处你可以利用 Markdown 语法排列 8 张缩略图，中心放置项目 Logo，形成你设想的视觉合力。</em></p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><img alt="疏影" loading="lazy" src="images/p1.png"></td>
+          <td style="text-align: center"><img alt="叠嶂" loading="lazy" src="images/p2.png"></td>
+          <td style="text-align: center"><img alt="流云" loading="lazy" src="images/p3.png"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><img alt="寒潭" loading="lazy" src="images/p4.png"></td>
+          <td style="text-align: center"><strong>[ iQualityR ]</strong></td>
+          <td style="text-align: center"><img alt="破晓" loading="lazy" src="images/p6.png"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><img alt="乱石" loading="lazy" src="images/p7.png"></td>
+          <td style="text-align: center"><img alt="远岫" loading="lazy" src="images/p8.png"></td>
+          <td style="text-align: center"><img alt="归鸟" loading="lazy" src="images/p9.png"></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-快速开始">📦 快速开始<a hidden class="anchor" aria-hidden="true" href="#-快速开始">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># 安装开发版本</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># install.packages(&#34;devtools&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">devtools</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;chenzhiming/iQualityR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">iQualityR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 开启“矿影探索”科研主题</span>
+</span></span><span class="line"><span class="cl"><span class="nf">set_iq_theme</span><span class="p">(</span><span class="s">&#34;mineral&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 执行单值控制图分析</span>
+</span></span><span class="line"><span class="cl"><span class="nf">spc_chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;I-MR&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="-文档导航">📖 文档导航<a hidden class="anchor" aria-hidden="true" href="#-文档导航">#</a></h2>
+<ul>
+<li><a href="installation">安装指南</a></li>
+<li><a href="spc-module">SPC 模块详解</a></li>
+<li><a href="colors">中国传统色调色盘使用手册</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://zhiming-chen.github.io/tags/spc/">SPC</a></li>
+      <li><a href="https://zhiming-chen.github.io/tags/quality-management/">Quality Management</a></li>
+      <li><a href="https://zhiming-chen.github.io/tags/r-package/">R-Package</a></li>
+      <li><a href="https://zhiming-chen.github.io/tags/data-visualization/">Data Visualization</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://zhiming-chen.github.io/">陈志明的博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

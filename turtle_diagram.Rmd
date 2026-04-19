@@ -1,0 +1,235 @@
+---
+title: "乌龟图（Turtle Diagram）在质量管理中的应用与R实现"
+author: "陈志明"
+date: '2026-04-19'
+categories:
+  - r
+  - tools
+  - quality
+tags:
+  - quality tools
+  - iQualityR
+  
+draft: false
+
+# --- 以下是 PaperMod 推荐增加的参数 ---
+showToc: true          # 是否显示文章目录（对长文很有用）
+TocOpen: false         # 目录默认是否展开
+hidemeta: false        # 是否隐藏作者、日期、分类等元数据
+comments: true         # 是否开启评论（如果你配了评论系统）
+description: "iQualityR R包实用函数功能介绍：乌龟图及其绘制函数"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 5
+)
+```
+
+## 引言
+
+乌龟图（Turtle Diagram）是一种系统化描述和分析过程的质量管理工具，起源于汽车行业标准 IATF 16949（前身为 ISO/TS 16949）。它通过七个关键要素（身体、头、尾、四条腿）将过程的所有相关维度可视化，形成形似乌龟的图形。乌龟图帮助团队：
+
+- 对过程达成一致理解
+- 识别输入、资源、方法等潜在风险
+- 满足 IATF 16949、ISO 9001 等标准对过程方法的要求
+- 作为 FMEA、控制计划、作业指导书的基础
+
+本包提供 `plot_turtle_diagram()` 函数，允许用户以简单的 R 代码快速生成高质量、可定制的乌龟图，并支持导出为 PNG、SVG、PDF 等格式。
+
+## 理论框架
+
+乌龟图的七大核心问题对应如下：
+
+| 部位   | 问题                       | 对应要素       |
+|--------|----------------------------|----------------|
+| 身体   | 过程是什么？谁负责？       | 过程名称、所有者、活动步骤 |
+| 头部   | 产出什么？交给谁？         | 输出（产品、记录、下游） |
+| 尾部   | 需要什么输入？从哪里来？   | 输入（物料、信息、上游） |
+| 左前腿 | 需要哪些资源？             | 设备、工具、软件 |
+| 右前腿 | 按照什么方法执行？         | 程序、标准、作业指导书 |
+| 左后腿 | 如何衡量绩效？             | 指标（KPI）、目标值 |
+| 右后腿 | 谁执行？需要什么能力？     | 角色、职责、能力要求 |
+
+填写每个要素时，应遵循 **SMART** 原则（具体、可测量、可达成、相关、有时限）并确保与上下游过程衔接。
+
+## 安装与加载
+
+```{r}
+# 安装包（假设包名为 iQualityR）
+# install.packages("iQualityR.plot")
+
+library(iQualityR.core)
+library(DiagrammeR)
+library(vtree)
+source("g:/iQualityR/iQualityR.plot/R/plot_turtle.R")
+source("g:/iQualityR/iQualityR.plot/R/plot_save.R")
+```
+
+## 基本用法
+
+最简单的调用——只指定过程名称，其他参数使用默认值：
+
+```{r}
+plot_turtle_diagram(process_name = "订单处理")
+```
+
+默认方向为头朝上（`direction = "T"`），六个支撑框填充相同的浅灰蓝色，中心圆圈为柔和蓝色。
+
+## 完整示例：组装过程
+
+以下示例包含所有七个要素，并使用 `"academic"` 主题（白底、灰边框）。
+
+```{r }
+g <- plot_turtle_diagram(
+  process_name = "组装过程",
+  process_owner = "生产部经理",
+  activities = c("接收部件", "定位夹具", "紧固螺丝", "检查扭矩", "贴标签"),
+  inputs = c("铝型材", "螺丝", "图纸ABC-123", "生产工单"),
+  outputs = c("组装件", "自检表", "扭矩数据"),
+  resources = c("扭矩扳手", "气动螺丝刀", "专用夹具", "MES终端"),
+  procedures = c("SOP-ASSY-01", "扭矩标准 5.0±0.5 N·m", "首件检验流程"),
+  metrics = c("一次合格率 ≥98%", "节拍 ≤3 min/件", "扭矩CPk ≥1.33"),
+  responsibilities = c("装配工 (持证)", "质量巡检员", "生产班长"),
+  theme_style = "academic",
+  title = "乌龟图示例：组装过程",
+  subtitle = "版本 1.0",
+  annotation = "注：基于 IATF 16949 过程方法绘制"
+)
+```
+
+执行上述代码后，图形会自动显示在 RStudio 的 Viewer 窗格中。
+
+## 自定义填充色
+
+通过 `user_colors` 参数，您可以分别设置中心圆圈和六个支撑框的填充色（建议六个框使用相同颜色，以免视觉杂乱）。
+
+```{r}
+my_colors <- list(
+  process = "#FFB6C1",   # 中心圆圈（粉红）
+  inputs  = "#C0E0FF",
+  outputs = "#C0E0FF",
+  resources = "#C0E0FF",
+  procedures = "#C0E0FF",
+  metrics = "#C0E0FF",
+  responsibilities = "#C0E0FF"
+)
+
+plot_turtle_diagram(
+  process_name = "订单处理",
+  user_colors = my_colors,
+  title = "自定义颜色示例"
+)
+```
+
+## 调整方向
+
+乌龟图支持头朝上（`"T"`）、下（`"B"`）、左（`"L"`）、右（`"R"`），四肢位置会自动适应。
+
+```{r}
+plot_turtle_diagram(
+  process_name = "物流发运",
+  direction = "L",
+  title = "头朝左的乌龟图"
+)
+```
+
+## 保存图形
+
+函数生成的图形对象（类 `grViz`）可以通过 `save_diagram()` 通用函数导出为 PNG、SVG 或 PDF 格式。
+
+```{r}
+g <- plot_turtle_diagram(process_name = "组装过程")
+save_diagram(g, "assembly_turtle.png", type = "png")
+```
+
+批量生成不同工序的乌龟图：
+
+```{r}
+processes <- c("注塑", "组装", "测试")
+for (proc in processes) {
+  g <- plot_turtle_diagram(process_name = proc)
+  save_diagram(g, filename = paste0(proc, "_turtle"), type = "png")
+}
+```
+
+## 实战案例：注塑成型过程
+
+**背景**：一家汽车零部件供应商需要对其“注塑成型过程”进行标准化分析，以满足 IATF 16949 要求。
+
+**过程信息**：
+
+| 要素           | 内容                                                         |
+|----------------|--------------------------------------------------------------|
+| 过程名称       | 注塑成型                                                     |
+| 过程所有者     | 注塑车间主任                                                 |
+| 核心活动       | 备料 → 干燥 → 料筒加热 → 合模注射 → 保压冷却 → 取出检验      |
+| 输入           | 塑料粒子（仓库）、模具（模具库）、工艺卡（工程部）           |
+| 输出           | 注塑件（质量部）、成型参数记录、废品标签                     |
+| 资源           | 注塑机、机械手、模温机、干燥机、游标卡尺                     |
+| 方法           | WI-IM-01 注塑作业指导书、工艺参数表（温度/压力/速度）        |
+| 指标           | 尺寸 CPk ≥1.33、外观合格率 ≥99.5%、换模时间 ≤30 min         |
+| 职责           | 操作工（上岗证）、技术员（参数调整）、检验员（首件确认）     |
+
+**生成代码**：
+
+```{r}
+plot_turtle_diagram(
+  process_name = "注塑成型",
+  process_owner = "注塑车间主任",
+  activities = c("备料", "干燥", "料筒加热", "合模注射", "保压冷却", "取出检验"),
+  inputs = c("塑料粒子", "模具", "工艺卡"),
+  outputs = c("注塑件", "成型参数记录", "废品标签"),
+  resources = c("注塑机", "机械手", "模温机", "干燥机", "游标卡尺"),
+  procedures = c("WI-IM-01 注塑作业指导书", "工艺参数表（温度/压力/速度）"),
+  metrics = c("尺寸 CPk ≥1.33", "外观合格率 ≥99.5%", "换模时间 ≤30 min"),
+  responsibilities = c("操作工 (上岗证)", "技术员", "检验员"),
+  theme_style = "tech",
+  title = "注塑成型过程乌龟图",
+  subtitle = "符合 IATF 16949 过程分析要求"
+)
+```
+
+该乌龟图可直接用于质量手册、过程风险分析或内部培训材料。
+
+## 常见问题与最佳实践
+
+**Q1：如何确定乌龟图的颗粒度？**  
+原则：一个乌龟图对应一个独立的过程（有明确的输入、输出和边界）。避免将多个大过程合并（例如“生产管理”应拆分为“排产”、“备料”、“生产”、“检验”等）。
+
+**Q2：输入/输出如何与上下游过程衔接？**  
+输出的“下游过程”应与另一个乌龟图的名称一致，确保过程地图的连续性。例如，注塑成型的输出“注塑件”应恰好是“组装过程”的输入。
+
+**Q3：指标应该怎样定义？**  
+使用 SMART 原则：**S**pecific（具体）、**M**easurable（可测量）、**A**chievable（可达成）、**R**elevant（相关）、**T**ime-bound（有时间限制）。例如“一次合格率 ≥98%”比“质量好”更有效。
+
+**Q4：如何基于乌龟图进行风险分析？**  
+对每个要素提问“如果缺失或失效会怎样？”例如：
+- 输入缺失 → 过程无法启动
+- 资源故障 → 过程中断
+- 指标未达成 → 需要改进
+这些风险可输入到 FMEA 中。
+
+**Q5：为什么我的图形中文字重叠或位置错乱？**  
+可调整 `node_width`, `node_height`, `process_width`, `process_height` 等参数（通过 `theme` 列表传入）。另外，确保输入文本不过长（必要时拆分或使用缩写）。
+
+## 结论
+
+乌龟图是一个简单却强大的过程可视化工具。通过 `plot_turtle_diagram()` 函数，质量工程师、过程所有者和 R 用户可以快速生成符合行业标准的乌龟图，并轻松集成到文档或报告中。该函数支持高度定制（颜色、方向、标题、脚注），并提供了导出功能，便于在批量化生产环境中使用。
+
+未来版本计划增加：
+- 更多内置主题（如企业配色方案）
+- 交互式编辑（通过 `shiny` 或 `htmlwidgets`）
+- 直接导出为 Word 或 PowerPoint 格式
+
+欢迎反馈和建议！
+
+## 参考文献
+
+1. IATF 16949:2016 – 汽车行业质量管理体系要求
+2. ISO 9001:2015 – 质量管理体系 – 要求
+3. AIAG 过程方法指南 (2008)
